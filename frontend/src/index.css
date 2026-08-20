@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+
+/* ── Custom Theme Tokens ─────────────────────────────────── */
+@theme {
+  --color-brand-bg:      #0d0d14;
+  --color-brand-surface: #16161f;
+  --color-brand-card:    #1e1e2e;
+  --color-brand-border:  #2a2a3d;
+
+  --color-brand-green:   #00e676;
+  --color-brand-red:     #ff1744;
+  --color-brand-blue:    #2979ff;
+  --color-brand-yellow:  #ffd600;
+  --color-brand-purple:  #d500f9;
+
+  --color-text-primary:  #f0f0ff;
+  --color-text-muted:    #7878a0;
+
+  --font-family-sans: 'Outfit', 'Inter', sans-serif;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+/* ── Base Styles ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-brand-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-brand-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-brand-border); border-radius: 999px; }
+
+/* ── Glassmorphism ───────────────────────────────────────── */
+.glass {
+  background: rgba(30, 30, 46, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Gradient Glow ───────────────────────────────────────── */
+.glow-green { box-shadow: 0 0 20px rgba(0, 230, 118, 0.25); }
+.glow-red   { box-shadow: 0 0 20px rgba(255, 23, 68, 0.25); }
+.glow-blue  { box-shadow: 0 0 20px rgba(41, 121, 255, 0.25); }
+
+/* ── Card Swipe Animation ────────────────────────────────── */
+@keyframes swipe-left {
+  to { transform: translateX(-120%) rotate(-20deg); opacity: 0; }
+}
+@keyframes swipe-right {
+  to { transform: translateX(120%) rotate(20deg); opacity: 0; }
+}
+@keyframes card-enter {
+  from { transform: scale(0.92) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.animate-swipe-left  { animation: swipe-left 0.4s ease forwards; }
+.animate-swipe-right { animation: swipe-right 0.4s ease forwards; }
+.animate-card-enter  { animation: card-enter 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+
+/* ── Pulse Badge ─────────────────────────────────────────── */
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.animate-pulse-badge { animation: pulse-badge 2s ease-in-out infinite; }
+
+/* ── Modal Backdrop ──────────────────────────────────────── */
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes modal-pop {
+  from { transform: scale(0.85) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+.animate-backdrop { animation: backdrop-in 0.2s ease forwards; }
+.animate-modal-pop { animation: modal-pop 0.25s cubic-bezier(0.34,1.56,0.64,1) forwards; }
