@@ -1,0 +1,24 @@
+# Dependencias
+node_modules/
+frontend/node_modules/
+
+# Base de datos (se genera con npm run seed)
+backend/db/megabet.db
+
+# Imágenes subidas por usuarios
+backend/uploads/
+
+# Variables de entorno
+.env
+.env.local
+
+# Build del frontend
+frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

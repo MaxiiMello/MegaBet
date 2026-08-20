@@ -1,0 +1,31 @@
+{
+  "name": "megabet",
+  "version": "1.0.0",
+  "description": "Casa de Apuestas Entre Amigos - MVP",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "seed": "node backend/db/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxiiMello/MegaBet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxiiMello/MegaBet/issues"
+  },
+  "homepage": "https://github.com/MaxiiMello/MegaBet#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.2.0"
+  }
+}
